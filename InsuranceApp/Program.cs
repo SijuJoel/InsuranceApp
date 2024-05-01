@@ -2,6 +2,7 @@
 
 //main process or when run --- above main method
 using System.ComponentModel.DataAnnotations;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace InsuranceApp
 {
@@ -31,31 +32,33 @@ namespace InsuranceApp
             
 
             //User enters Device Name
-            Console.WriteLine("Enter Device's name");
+            Console.WriteLine("Enter Device's name:");
             deviceName  = Console.ReadLine();
-            Console.Clear();
+            Console.WriteLine();
+            
 
             //User enters category of device
-            Console.WriteLine("Enter Device Category");
+            Console.WriteLine("Enter Device Category:");
             Console.WriteLine("pick a number 1, 2, or 3");
             Console.WriteLine("1.Laptop");
             Console.WriteLine("2.Desktop");
-            Console.WriteLine("3.Other(such as a smartphone or drone)");
+            Console.WriteLine("3.Other(such as a smartphone or drone):");
             deviceCategory = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+            Console.WriteLine();
+
 
             //User enters number of devices used at school
-            Console.WriteLine("Enter number of devices used at school");
+            Console.WriteLine("Enter number of devices used at school:");
             numOfDevice = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+            Console.WriteLine();
 
             //user enters cost for device
-            Console.WriteLine("Enter Device Cost");
+            Console.WriteLine("Enter Device Cost:");
             deviceCost = (float)Convert.ToDouble(Console.ReadLine());
-            Console.Clear();
+            Console.WriteLine();
 
-            
-            
+
+
 
 
 
@@ -84,6 +87,7 @@ namespace InsuranceApp
 
             //calculate depreciation over 6 months
             Console.WriteLine("Month   Value Loss");
+            Console.WriteLine("Depreciation value for device along 6 month period");
             depreciation = deviceCost;
             for (int month = 0; month < 6; month++)
 
@@ -134,7 +138,8 @@ namespace InsuranceApp
         {
             //display app title
             Console.WriteLine("Insurance App");
-
+            Console.WriteLine();
+            
             string proceed = "";
             while (proceed.Equals(""))
             {
@@ -143,7 +148,8 @@ namespace InsuranceApp
 
                 Console.WriteLine("Press <ENTER> To Add Another Device or type X to Exit");
                 proceed = Console.ReadLine();
-                Console.Clear();
+                Console.WriteLine();
+
             }
             //display second part of summary
             Console.WriteLine($"The number of Laptops: {laptopCounter}");
