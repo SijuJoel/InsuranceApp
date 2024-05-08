@@ -10,6 +10,7 @@ namespace InsuranceApp
     internal class Program
     {
         //global variable
+        //list of strings, of device type
         readonly static List<string> DEVICECATEGORY = new List<string>()
 
         {
@@ -22,9 +23,10 @@ namespace InsuranceApp
         static string mostExpensiveDeviceName;
         static float totalInsuranceCost = 0, mostExpensiveDevice = 0;
         private static string menu;
-
+ 
         //methods and functions
 
+        //this is used to display errors for devicecost, numofdevice, and devicecategory
         static float Checkfloat(string question, float min, float max)
 
         {
@@ -53,6 +55,7 @@ namespace InsuranceApp
                 {
                     DisplayErrorMessage($"ERROR: You must enter an integer between {min} and {max}");
                 }
+            //makes error message color red
             static void DisplayErrorMessage(string error)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -61,7 +64,7 @@ namespace InsuranceApp
 
             }
         }
-
+        //checks if the itergers typed in aren;t letters ad spaced out, if wrong information is entered a error messga eis shown
         static int Checkint(string question, int min, int max)
         {
             while (true)
@@ -90,6 +93,7 @@ namespace InsuranceApp
                 {
                     DisplayErrorMessage($"ERROR: You must enter an integer between {min} and {max}");
                 }
+            //makes the error message the color red
             static void DisplayErrorMessage(string error)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -104,16 +108,16 @@ namespace InsuranceApp
         {
             
 
-            string deviceName;
-            int numOfDevice, deviceCategory;
-            float deviceCost, depreciation, insuranceCost = 0;
+            string deviceName; //this is a string which will return what ever the user puts in, which in this case will be the devicename
+            int numOfDevice, deviceCategory; // this int means that it will return a whole number without decimals
+            float deviceCost, depreciation, insuranceCost = 0; //floats mean that it returns a number with decimal
 
 
            
 
 
 
-
+            //makes error message color red
             static void DisplayErrorMessage(string error)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -227,7 +231,7 @@ namespace InsuranceApp
         }
 
       
-
+        //check if they chose the option "X" or "Enter" if not show a error
         static string CheckProceed()
         {
 
@@ -245,6 +249,7 @@ namespace InsuranceApp
                 DisplayErrorMessage("Error invalid response");
             }
         }
+        //makes error messgae color red
         static void DisplayErrorMessage(string error)
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -258,6 +263,7 @@ namespace InsuranceApp
 
 
         //Main process
+        //to Add another device after they press "Enter"
         static void Main(string[] args)
             {
                 //display app title
@@ -270,7 +276,7 @@ namespace InsuranceApp
                     proceed = CheckProceed();
 
                 }
-                //display second part of summary
+                //display second part of summary after user enters "x"
                 Console.WriteLine($"The number of Laptops: {laptopCounter}");
                 Console.WriteLine($"The number of Desktops: {desktopCounter}");
                 Console.WriteLine($"The number of other Device: {otherCounter}");
